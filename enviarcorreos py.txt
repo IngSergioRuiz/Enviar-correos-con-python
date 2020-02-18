@@ -1,0 +1,16 @@
+# Importar librerias para servidor de correo
+import smtplib
+
+#Texto del mensaje y lo guardamos en una variable
+message ="Holaaaaaaa"
+
+#Creamos el servidor y en este caso trabajaremos con gmail
+server = smtplib.SMTP("smtp.gmail.com")
+# Iniciamos el servidor
+server.starttls()
+#Iniciamos sesion en nuestra cuenta
+server.login("ingenierosergioruiz@gmail.com", "Checho13")
+# Enviamos el mensaje recibe 3 parametros from - to - content
+server.sendmail("ingenierosergioruiz@gmail.com", "ingenierosergioruiz@gmail.com", message)
+#Cerrar sesion
+server.quit()
